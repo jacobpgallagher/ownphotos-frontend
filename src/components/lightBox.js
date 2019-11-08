@@ -490,6 +490,11 @@ export class LightBox extends Component {
                       )}
                     </div>
 
+                   {this.props.photoDetails[
+                                  this.props.idx2hash[
+                                    this.props.lightboxImageIndex
+                                  ]
+                                ].captions_json ? (
                     <Item>
                       <Item.Content verticalAlign="middle">
                         <Item.Header>
@@ -550,7 +555,14 @@ export class LightBox extends Component {
                         </Item.Description>
                       </Item.Content>
                     </Item>
+                    ) : (<Item/>)}
 
+
+                    {this.props.photoDetails[
+                                  this.props.idx2hash[
+                                    this.props.lightboxImageIndex
+                                  ]
+                                ].captions_json ? (
                     <Item>
                       <Item.Content verticalAlign="middle">
                         <Item.Header>
@@ -638,6 +650,8 @@ export class LightBox extends Component {
                         </Item.Description>
                       </Item.Content>
                     </Item>
+                    ) : (<Item/>)}
+
                     <Item>
                       <Item.Content verticalAlign="middle">
                         <Item.Header>
