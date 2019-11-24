@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 sed -i "s@http://192.168.1.100@//${BACKEND_HOST}@g" src/api_client/apiClient.js
-sed -i "s@http://192.168.1.100:8000/@http://backend/@g" package.json
+sed -i "s@http://192.168.1.100:8000/@http://${BACKEND_HOST}/@g" package.json
 
 # echo "building frontend"
 # npm run build

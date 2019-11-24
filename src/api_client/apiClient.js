@@ -21,10 +21,10 @@ function listener() {
 }
 
 
-export var serverAddress = 'http://192.168.1.100'
+export var serverAddress = ''
 
 export var Server = axios.create({
-    baseURL: 'http://192.168.1.100/api/',
+    baseURL: '/api/',
   headers: {
     'Content-Type': 'application/json'
   },
@@ -58,7 +58,7 @@ Server.interceptors.response.use(function (response) {
     // console.log('retrying')
 
     // store.dispatch(refreshAccessToken(refreshToken))
-    return Server.post(serverAddress+'/api/auth/token/refresh/', { refresh:refreshToken })
+    return Server.post('/auth/token/refresh/', { refresh:refreshToken })
       .then((response) => {
       	store.dispatch({type: "REFRESH_ACCESS_TOKEN_FULFILLED", payload: response.data})
       	// console.log('setting refreshed access token in retry',response.data)

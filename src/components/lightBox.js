@@ -665,7 +665,7 @@ export class LightBox extends Component {
                                     this.props.lightboxImageIndex
                                   ]
                                 ].similar_photos.slice(0,30).map(el=>(
-                                  <Image width={95} height={95} 
+                                  <Image width={95} height={95}
                                     src={serverAddress+"/media/square_thumbnails_small/"+el.image_hash+".jpg"}/>
                                 ))
                           }
